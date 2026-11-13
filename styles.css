@@ -1,0 +1,142 @@
+:root {
+    color-scheme: light dark;
+    --background: #f4f6f8;
+    --surface: #ffffff;
+    --text: #1a2430;
+    --muted: #4e5b68;
+    --border: #cbd4de;
+    --link: #16538b;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #121a23;
+        --surface: #1a2530;
+        --text: #eef3f8;
+        --muted: #bcc9d6;
+        --border: #485968;
+        --link: #a0d0ff;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font: 1rem / 1.7 system-ui, sans-serif;
+    overflow-wrap: anywhere;
+}
+
+.wrapper {
+    width: min(100% - 2rem, 46rem);
+    margin-inline: auto;
+}
+
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+    padding-block: .5rem;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding-block: .55rem;
+}
+
+a {
+    color: var(--link);
+    text-underline-offset: .2em;
+}
+
+a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+a[aria-current] {
+    font-weight: 700;
+}
+
+main {
+    padding-block: 2rem 3rem;
+}
+
+.language-nav {
+    margin-bottom: 1rem;
+}
+
+article {
+    padding: clamp(1.125rem, 5vw, 2.5rem);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    scroll-margin-top: 1rem;
+}
+
+article + article {
+    margin-top: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 5vw, 2.4rem);
+}
+
+h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 4vw, 1.8rem);
+}
+
+h3 {
+    margin: 1.65rem 0 .45rem;
+    font-size: 1.15rem;
+}
+
+p {
+    margin: 0 0 .8rem;
+}
+
+article p:last-child {
+    margin-bottom: 0;
+}
+
+.policy-version {
+    margin-top: .5rem;
+    color: var(--muted);
+}
+
+main > h1 + article {
+    margin-top: 1rem;
+}
